@@ -5,13 +5,17 @@
 using json = nlohmann::json;
 
 // HTTP
-httplib::Client cli("http://yhirose.github.io");
 
-auto res = cli.Get("/hi");
-res->status;
-res->body;
 
 int main() {
+    // Create a simple HTTP client
+    httplib::Client cli("http://yhirose.github.io");
+
+    auto res = cli.Get("/hi");
+    res->status;
+    res->body;   
+
+
     // Creating a JSON object
     json user_profile = {
         {"name", "Robert"},
